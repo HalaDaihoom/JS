@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src ="Untitled.js"></script>
+
+        <label for="first input">username</label>
+        <input type="text" name="user" placeholder="entre your username">
+        </br>
+        <label for="second input">password</label>
+        <input type="password" name="password" placeholder="entre your password">
+        <button onclick=login()>login</button>
+    </body>
+        </html>
+
+
+let users={
+    "Amira":{"password":"123654789","age":20,"gender":"female"},
+    "Amir":{"password":"987456321","age":23,"gender":"male"},
+}
+
+function login(){
+    let user=document.getElementsByName("user")[0].value;
+    let password=document.getElementsByName("password")[0].value;
+    
+    if(users[user]["password"]==password){
+        document.write("Success");
+        localStorage.setItem(users["age"],users["gender"]);
+        window.location.href="home.html";
+    } else{
+        document.write("False");
+    }
+    console.log(`${user} ${password}`);
+}
